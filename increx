@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+import readline
+import subprocess
+import pyperclip
+import os
+
+history_file = os.path.expanduser("~/.cache/erlang-history/erlang-shell-log")
+
+def update_history():
+    lines = subprocess.getoutput("erlang_history_string " + history_file).split("\n")
+    for line in lines:
+        readline.add_history(line)
+while True:
+    update_history()
+    try:
+        result = input()
+        if result:
+            pyperclip.copy(result)
+    except EOFError:
+        pass

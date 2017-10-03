@@ -1,0 +1,27 @@
+#!/usr/bin/env elixir
+
+defmodule ErlangHistoryString do
+
+  def concat(continuation, output) do
+    # TODO we should probably check the documentation and ensure that it's reasonable to always skip
+    # the first two lines.
+    case :wrap_log_reader.chunk(continuation) do
+      {continuation, [{:vsn, _} | [_ | lines]]} ->
+        concat(continuation, output <> Enum.join(lines))
+      {_, :eof} ->
+        output
+    end
+  end
+
+  def output(filename) do
+    {:ok, continuation} = :wrap_log_reader.open(to_charlist(filename))
+    IO.puts(concat(continuation, ""))
+  end
+
+end
+
+# The history file name is usually ~/.cache/erlang-history/erlang-shell-log or so. Note that,
+# although the directory contains the files erlang-shell-log.1, erlang-shell-log.2. …, you should
+# provide the filename without a leading .1, .2, or whatever.
+[filename] = System.argv()
+ErlangHistoryString.output(filename)
