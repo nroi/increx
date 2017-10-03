@@ -14,6 +14,9 @@ simply be pasted into your clipboard.
 Just copy both scripts into your `PATH`. If your Erlang history does not reside in `~/.cache/erlang-history/erlang-shell-log`,
 update the path in the `increx` file.
 
+If you haven't installed pyperclip, get it from pip:
+`pip install  --user pyperclip`
+
 
 ## Usage
 

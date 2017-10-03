@@ -2,8 +2,8 @@
 
 import readline
 import subprocess
-import pyperclip
 import os
+import pyperclip
 
 history_file = os.path.expanduser("~/.cache/erlang-history/erlang-shell-log")
 
