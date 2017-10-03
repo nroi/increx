@@ -11,12 +11,12 @@ simply be pasted into your clipboard.
 
 ## Installation & Configuration
 
-Just copy both scripts into your `PATH`. If your erlang history does not reside in `~/.cache/erlang-history/erlang-shell-log`,
+Just copy both scripts into your `PATH`. If your Erlang history does not reside in `~/.cache/erlang-history/erlang-shell-log`,
 update the path in the `increx` file.
 
 
 ## Usage
 
 Move both scripts into your `PATH`, then run `ingrex`. Click the up-arrow key
-<kbd>↑</kbd> to navigate through your history. Type the prefix of something you have previosly typed in IEx and then
+<kbd>↑</kbd> to navigate through your history. Type the prefix of something you have previously typed in IEx and then
 hit <kbd>↑</kbd> to make use of incremental search.
