@@ -22,6 +22,6 @@ end
 
 # The history file name is usually ~/.cache/erlang-history/erlang-shell-log or so. Note that,
 # although the directory contains the files erlang-shell-log.1, erlang-shell-log.2. …, you should
-# provide the filename without a leading .1, .2, or whatever.
+# provide the filename without a trailing .1, .2, or whatever.
 [filename] = System.argv()
 ErlangHistoryString.output(filename)
